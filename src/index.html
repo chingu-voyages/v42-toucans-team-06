@@ -5,33 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Rye&display=swap"
+      rel="stylesheet"
+    />
     <title>Chuck Norris Quotes</title>
   </head>
   <body>
-    <header>
-      <h1>Chuck Norris Quotes</h1>
-    </header>
+    <main class="page-section grid">
+      <aside class="column-left">
+        <div class="query-container">
+          <form class="query">
+            <label for="quotes">Choose a category:</label>
+            <!-- select element -->
+          </form>
+          <button type="submit">Get a quote</button>
+        </div>
 
-    <main>
-      <div class="hero-container">
-        <img
-          src="../assets/images/chuck.png"
-          alt="chuck norris icon"
-          class="chuck-icon"
-        />
-      </div>
+        <!-- <div class="results-container">
+          <p class="results"></p>
+        </div> -->
+      </aside>
 
-      <div class="query-container">
-        <form class="query">
-          <label for="quotes">Choose a category:</label>
-          <!-- select element -->
-        </form>
-        <button type="submit">Get a quote</button>
-      </div>
+      <section class="column-right">
+        <header class="page-header">
+          <h1 class="page-header--first font-rye">Chuck</h1>
+          <h2 class="page-header--second font-rye">Norris</h2>
+        </header>
 
-      <div class="results-container">
-        <p class="results"></p>
-      </div>
+        <h3 class="h3 font-rye">Do you want a quote?</h3>
+        <div class="img-container">
+          <img
+            class="chuck-img"
+            src="/assets/images/ChuckNorris.png"
+            width="400"
+          />
+        </div>
+        <box class="quote-card results-container">
+          <p class="quote-text font-rye results">&#8592; Choose a category</p>
+        </box>
+      </section>
     </main>
 
     <footer>
