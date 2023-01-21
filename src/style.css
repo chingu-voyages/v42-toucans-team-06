@@ -107,11 +107,38 @@ body {
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
 }
 .quote-text {
-  display: block;
+  /* display: block; */
+  display: inline-block;
   color: #896a3b;
   text-align: center;
-  font-size: 1.25rem;
+  /* font-size: 1.25rem; */
+  font-size: 1rem;
 }
+
+/* TYPING EFFECT CSS */
+.quote-text{
+  position: relative;
+}
+
+#cursor{
+  display: inline;
+  background-color: #896a3b;
+  width: 3px;
+  height: 20px;
+  position: absolute;
+  animation: blink 0.7s infinite;
+
+}
+/* ****** */
+
+
+
+@keyframes blink{
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 
 /* **** OLD CSS STYLES **** */
 
