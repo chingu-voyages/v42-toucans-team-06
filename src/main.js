@@ -6,6 +6,8 @@ const cursor = document.createElement("span")
 cursor.setAttribute('id', 'cursor')
 
 
+
+
   async function createSelect(excludeCategories, domElement) {
     const response = await fetch('https://api.chucknorris.io/jokes/categories');
     const data = await response.json();
@@ -32,16 +34,24 @@ cursor.setAttribute('id', 'cursor')
 
 
 let index = 0; // For the anti-spam system
+let previousJoke;
 function getChuckNorrisQuote() {
     if(index === 0) {
         const category = document.getElementById("category").value
         fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
         .then(response => response.json())
         .then(data => {
+          if(previousJoke === data.value){
+            console.log("same joke fetched again, fetching new one")
+            getChuckNorrisQuote();
+          }else{
             console.log(data.value)
-            document.querySelector(".results").textContent = "";
-            cursor.remove();
-            typewriter(data.value, 0);
+            previousJoke = data.value
+            document.querySelector(".results").textContent = ""
+            cursor.remove()
+            typewriter(data.value, 0)
+          }
+            
         })
         .catch(error => console.log(error));
     }
