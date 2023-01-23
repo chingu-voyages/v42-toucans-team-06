@@ -1,52 +1,282 @@
-/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+/****** FONT ******/
+/* font-family: "Rye", sans-serif; */
 
-body{
-    min-height: 100vh;
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: center; */
-    align-items: center;
-    font-size: 1rem;
+/****** FONT SIZE ******/
+/* 1rem = 16px */
+/*
+16px - 1rem
+20px - 1.25rem
+24px - 1.5rem
+64px - 4rem
+128px - 8rem
+*/
+
+/****** COLORS ******/
+/* 
+Main: #5F4723
+Tint: #896A3B
+White: #FFF9F0
+*/
+
+/****** SPACE ******/
+/* 
+2.4rem
+3rem
+*/
+/* 
+letter-spacing: 0.2rem; 
+*/
+
+/****** STYLE ******/
+/* 
+border-radius: 8px; 
+box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+*/
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-main{
-    margin: 0 auto;
-    width: 600px;
+/****** General classes ******/
+
+.font-rye {
+  font-family: "Rye", sans-serif;
+}
+.font-lato {
+  font-family: "lato", sans-serif;
 }
 
-h1{
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
+/* PAGE */
+body {
+  max-width: 81rem;
+  background-color: #fff9f0;
+}
+.page-section {
+  width: 70%;
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.results-container{
-    margin-top: 30px;
-    text-align: center;
+/*** COLUMN LEFT ***/
+.column-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-self: flex-end;
+  opacity: 0.4;
+  transition: all 0.5s;
 }
 
-.query-container{
-    text-align: center;
+.column-left:hover {
+  opacity: 1;
 }
 
+.categories-title {
+  font-size: 1rem;
+  color: #5f4723;
+  letter-spacing: 0.2rem;
+}
+.btn {
+  font-size: 1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  color: #fff9f0;
+  background-color: #896a3b;
+  border-style: none;
+  border-radius: 5px;
+  width: 9rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #c18b39;
+}
+
+.btn:active {
+  background-color: #c18b39;
+  box-shadow: inset 0px 0px 11px 3px rgba(0, 0, 0, 0.1);
+}
+
+/*** COLUMN RIGHT ***/
+.column-right {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 43rem;
+  justify-self: end;
+}
+
+/* TITLE */
+.page-header {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #5f4723;
+  grid-row: 1 / span 3;
+  margin-right: 0.5rem;
+}
+.page-header--first {
+  font-size: 8rem;
+  height: 9rem;
+  letter-spacing: 0.5rem;
+}
+.page-header--second {
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+}
+
+/* QUESTION */
+.h3 {
+  color: #5f4723;
+  justify-self: end;
+  grid-column: 2;
+  grid-row: 5;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.img-container {
+  margin-left: 0.5rem;
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 3;
+  margin-bottom: -0.3rem;
+}
+
+/* QUOTE CARD */
+.quote-card {
+  border: 1.5px solid #5f4723;
+  border-radius: 8px;
+  grid-column: 1 / span 2;
+  padding: 3rem;
+  background-color: rgba(95, 71, 35, 0.09);
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+}
+.quote-text {
+  display: block;
+  color: #896a3b;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+/* **** OLD CSS STYLES **** */
+
+/* ! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+ul {
+  list-style: none;
+}
+button,
+input,
+select {
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+iframe {
+  border: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+ 
+  align-items: center;
+  font-size: 1rem;
+}
+
+main {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.results-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.query-container {
+  text-align: center;
+}
 
 button {
-    padding: 10px 20px;
-    margin: 25px 0;
-    font-size: 18px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-
-
-.hero-container{
-    text-align: center;
-    margin-bottom: 20px;
+  padding: 10px 20px;
+  margin: 25px 0;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.chuck-icon{
-    width: 250px;
-    height: 200px;
+.hero-container {
+  text-align: center;
+  margin-bottom: 20px;
 }
+
+.chuck-icon {
+  width: 250px;
+  height: 200px;
+} */
