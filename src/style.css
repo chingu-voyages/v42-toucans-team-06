@@ -82,7 +82,13 @@ body {
   border-style: none;
   border-radius: 5px;
   width: 9rem;
+  cursor: pointer;
 }
+
+.btn:hover, .active{
+  background-color: #b57a22;
+}
+
 
 /*** COLUMN RIGHT ***/
 .column-right {
