@@ -1,52 +1,84 @@
 const queryElement = document.querySelector(".query")
 const excludeCategories = ["religion", "political", "explicit"]
-const options = createSelect(excludeCategories, queryElement)
+const results = document.querySelector(".results")
+const cursor = document.createElement("span")
+const columnLeft = document.querySelector(".column-left")
+cursor.setAttribute('id', 'cursor')
 
-  async function createSelect(excludeCategories, domElement) {
+
+  const buttonsResponse = createButtons(excludeCategories, columnLeft)
+  buttonsResponse.then(buttons => console.log(buttons))
+  buttonsResponse.then(buttons => {
+    buttons.forEach(button => {
+      button.addEventListener("click", e => {
+        getChuckNorrisQuote(e);
+        // for(let i = 0; i < buttons.length; i++){
+        //   buttons[i].classList.remove("active")
+        // }
+        // e.target.classList.add("active")
+      })
+    })
+  })
+
+
+  async function createButtons(excludeCategories, domElement) {
     const response = await fetch('https://api.chucknorris.io/jokes/categories');
     const data = await response.json();
     const categories = data.filter(category => !excludeCategories.includes(category));
   
-    // create the select element
-    const select = document.createElement("select");
-    select.setAttribute("Id", "category")
-  
-    // create and append the options
     categories.forEach(category => {
-      const option = document.createElement("option");
-      option.value = category;
-      option.text = category;
-      select.appendChild(option);
+      const button = document.createElement("button");
+      button.innerHTML = category;
+      button.className = "btn"
+      domElement.appendChild(button)
     });
-  
-    // append the select element to the body
-    domElement.appendChild(select);
-    const table = document.querySelectorAll("body > main > div.query-container > form > select")
-    console.log(table)
-    return table
+
+    const buttons = document.querySelectorAll("body > main > aside > button")
+    return buttons
   }
 
 
-  function getChuckNorrisQuote() {
+let index = 0; // For the anti-spam system
+let previousJoke;
+function getChuckNorrisQuote(e) {
+  
+    if(index === 0) {
+      // Here we gonna add just a ForEach and retrieve the value of button
+        const category = e.target.textContent
+        fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
+        .then(response => response.json())
+        .then(data => {
+          if(previousJoke === data.value){
+            console.log("same joke fetched again, fetching new one")
+            getChuckNorrisQuote();
+          }else{
+            console.log(data.value)
+            previousJoke = data.value
+            document.querySelector(".results").textContent = ""
+            cursor.remove()
+            typewriter(data.value, 0)
+          }
+            
+        })
+        .catch(error => console.log(error));
+    }
+
     
-    const category = document.getElementById("category").value
-     fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.value)
-        document.querySelector(".results").textContent = data.value;
-      })
-      .catch(error => console.log(error));
-  }
+}
 
-  
-  const button = document.querySelector("button[type=submit]")
-  button.addEventListener("click", getChuckNorrisQuote)
-
-
+  function typewriter(text, i) {
+    if(i < text.length) {
+        results.textContent += text[i]
+        index = i;
+        results.appendChild(cursor);
+        setTimeout(() => typewriter(text, i + 1), 40);
+    } else {
+        results.appendChild(cursor);
+        index = 0; // For the anti-spam system
+    }
+}
 
 
-  
 
   
 

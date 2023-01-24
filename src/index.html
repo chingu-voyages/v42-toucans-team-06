@@ -11,25 +11,14 @@
       href="https://fonts.googleapis.com/css2?family=Lato&family=Rye&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <title>Chuck Norris Quotes</title>
   </head>
   <body>
     <main class="page-section grid">
       <aside class="column-left">
         <h3 class="categories-title font-rye">CATEGORIES</h3>
-        <button class="btn">Animal</button>
-        <button class="btn">Career</button>
-        <button class="btn">Celebrity</button>
-        <button class="btn">Dev</button>
-        <button class="btn">Fashion</button>
-        <button class="btn">Food</button>
-        <button class="btn">History</button>
-        <button class="btn">Money</button>
-        <button class="btn">Movie</button>
-        <button class="btn">Music</button>
-        <button class="btn">Science</button>
-        <button class="btn">Sport</button>
-        <button class="btn">Travel</button>
+        <!-- dynamically create buttons -->
       </aside>
 
       <section class="column-right">
@@ -42,12 +31,14 @@
         <div class="img-container">
           <img
             class="chuck-img"
-            src="/src/assets/images/ChuckNorris.png"
+            src="../src/assets/images/ChuckNorris.png"
             width="400"
           />
-        </div>
+        </div>  
+    
+        
         <box class="quote-card results-container">
-          <p class="quote-text font-rye results">&#8592; Choose a category</p>
+            <p class="quote-text font-rye results">&#8592; Choose a category</p>
         </box>
       </section>
     </main>
