@@ -50,10 +50,13 @@ box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
 /* PAGE */
 body {
   background-color: #fff9f0;
+  margin-left: auto;
+  margin-right: auto;
 }
 .page-section {
-  width: 80%;
-  margin-top: 2rem;
+  width: 70%;
+  margin-top: 2.5rem;
+  margin-bottom: 5rem;
   display: grid;
   grid-template-columns: 1fr 4fr;
   margin-left: auto;
@@ -164,42 +167,33 @@ body {
   text-align: center;
   font-size: 1.25rem;
 }
-/*Horizontal line styling*/
-.hr-container {
+
+/*** FOOTER ***/
+.footer-section {
+  text-align: center;
+  border-top: 1px solid rgba(137, 106, 59, 0.4);
+  padding: 3rem 0;
+}
+
+.footer-title {
+  color: rgba(137, 106, 59, 0.55);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.creators {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
-.hr-line {
-  margin-top: 5rem;
-  margin-bottom: 3rem;
-  width: 90%;
-  background-color: rgb(193, 139, 57, 0.3);
+
+.creator-link {
+  color: rgba(137, 106, 59, 0.45);
+  font-size: 0.8rem;
+  text-decoration: none;
+  border-right: 1px solid rgba(137, 106, 59, 0.45);
+  padding: 0 0.7rem;
 }
-/*FOOTER STYLING STARTS HERE*/
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.Team-member-h4 {
-  font-size: 1.5rem;
-  color: rgb(193, 139, 57, 0.8);
-  font-family: "lato", sans-serif;
-}
-.Team-section-info-section {
-  display: flex;
-  margin: 10px 0;
-}
-.Te-Se-In-Div {
-  border-right: 2px solid rgb(193, 139, 57, 0.8);
-  padding-right: 10px;
-}
-.Te-Se-In-Div-p {
-  color: rgb(193, 139, 57, 0.8);
-  margin: 0 10px;
-}
+
 .erase-border {
   border: none;
 }
