@@ -12,10 +12,10 @@ cursor.setAttribute('id', 'cursor')
     buttons.forEach(button => {
       button.addEventListener("click", e => {
         getChuckNorrisQuote(e);
-        for(let i = 0; i < buttons.length; i++){
-          buttons[i].classList.remove("active")
-        }
-        e.target.classList.add("active")
+        // for(let i = 0; i < buttons.length; i++){
+        //   buttons[i].classList.remove("active")
+        // }
+        // e.target.classList.add("active")
       })
     })
   })
