@@ -49,12 +49,11 @@ box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
 
 /* PAGE */
 body {
-  max-width: 81rem;
   background-color: #fff9f0;
 }
 .page-section {
-  width: 70%;
-  margin-top: 2.5rem;
+  width: 80%;
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 4fr;
   margin-left: auto;
@@ -141,7 +140,8 @@ body {
   margin-bottom: 0.2rem;
 }
 .img-container {
-  margin-left: 0.5rem;
+  margin-left: 0.7rem;
+  margin-top: -0.5rem;
   grid-column: 1 / span 2;
   grid-row: 3 / span 3;
   margin-bottom: -0.3rem;
@@ -153,12 +153,53 @@ body {
   border-radius: 8px;
   grid-column: 1 / span 2;
   padding: 3rem;
-  background-color: rgba(95, 71, 35, 0.09);
+  background-color: rgb(193, 139, 57, 0.3);
+
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+  height: 10rem;
 }
 .quote-text {
   display: block;
   color: #896a3b;
   text-align: center;
   font-size: 1.25rem;
+}
+/*Horizontal line styling*/
+.hr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hr-line {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  width: 90%;
+  background-color: rgb(193, 139, 57, 0.3);
+}
+/*FOOTER STYLING STARTS HERE*/
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Team-member-h4 {
+  font-size: 1.5rem;
+  color: rgb(193, 139, 57, 0.8);
+  font-family: "lato", sans-serif;
+}
+.Team-section-info-section {
+  display: flex;
+  margin: 10px 0;
+}
+.Te-Se-In-Div {
+  border-right: 2px solid rgb(193, 139, 57, 0.8);
+  padding-right: 10px;
+}
+.Te-Se-In-Div-p {
+  color: rgb(193, 139, 57, 0.8);
+  margin: 0 10px;
+}
+.erase-border {
+  border: none;
 }
