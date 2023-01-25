@@ -75,6 +75,7 @@ body {
   align-self: flex-end;
   opacity: 0.4;
   transition: all 0.5s;
+  justify-content: space-around;
 }
 
 .column-left:hover {

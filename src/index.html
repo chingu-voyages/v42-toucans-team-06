@@ -17,26 +17,24 @@
   </head>
   <body>
     <main class="page-section grid">
-      <aside class="column-left close">
+      <aside class="column-left close" id="aside">
         <h3 class="categories-title font-rye">CATEGORIES</h3>
         <!-- dynamically create buttons -->
         <div class="menu-icon-section">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            class="w-6 h-6 menu-icon"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z"
-              clip-rule="evenodd"
-            />
-          </svg>
+          <ion-icon
+            name="chevron-forward-outline"
+            class="menu-icon open"
+            id="arrow-right"
+          ></ion-icon>
+          <ion-icon
+            name="chevron-back-outline"
+            class="menu-icon"
+            id="arrow-left"
+          ></ion-icon>
         </div>
       </aside>
 
-      <section class="column-right">
+      <section class="column-right" id="column-right">
         <header class="page-header">
           <h1 class="page-header--first font-rye">Chuck</h1>
           <h2 class="page-header--second font-rye">Norris</h2>
@@ -57,6 +55,14 @@
       </section>
     </main>
     <script src="./main.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 
   <footer>
