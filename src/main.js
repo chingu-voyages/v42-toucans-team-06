@@ -12,10 +12,6 @@ cursor.setAttribute('id', 'cursor')
     buttons.forEach(button => {
       button.addEventListener("click", e => {
         getChuckNorrisQuote(e);
-        // for(let i = 0; i < buttons.length; i++){
-        //   buttons[i].classList.remove("active")
-        // }
-        // e.target.classList.add("active")
       })
     })
   })
@@ -28,7 +24,7 @@ cursor.setAttribute('id', 'cursor')
   
     categories.forEach(category => {
       const button = document.createElement("button");
-      button.innerHTML = category;
+      button.innerHTML = capitalizeFirstLetter(category);
       button.className = "btn"
       domElement.appendChild(button)
     });
@@ -44,7 +40,7 @@ function getChuckNorrisQuote(e) {
   
     if(index === 0) {
       // Here we gonna add just a ForEach and retrieve the value of button
-        const category = e.target.textContent
+        const category = e.target.textContent.toLowerCase()
         fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
         .then(response => response.json())
         .then(data => {
@@ -62,8 +58,6 @@ function getChuckNorrisQuote(e) {
         })
         .catch(error => console.log(error));
     }
-
-    
 }
 
   function typewriter(text, i) {
@@ -76,6 +70,11 @@ function getChuckNorrisQuote(e) {
         results.appendChild(cursor);
         index = 0; // For the anti-spam system
     }
+}
+
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 
