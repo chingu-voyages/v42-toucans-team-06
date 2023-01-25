@@ -17,19 +17,17 @@ cursor.setAttribute("id", "cursor");
   })
 
 
-async function createButtons(excludeCategories, domElement) {
-  const response = await fetch("https://api.chucknorris.io/jokes/categories");
-  const data = await response.json();
-  const categories = data.filter(
-    (category) => !excludeCategories.includes(category)
-  );
-
-  categories.forEach((category) => {
-    const button = document.createElement("button");
-    button.innerHTML = category;
-    button.className = "btn";
-    domElement.appendChild(button);
-  });
+  async function createButtons(excludeCategories, domElement) {
+    const response = await fetch('https://api.chucknorris.io/jokes/categories');
+    const data = await response.json();
+    const categories = data.filter(category => !excludeCategories.includes(category));
+  
+    categories.forEach(category => {
+      const button = document.createElement("button");
+      button.innerHTML = capitalizeFirstLetter(category);
+      button.className = "btn"
+      domElement.appendChild(button)
+    });
 
   const buttons = document.querySelectorAll("body > main > aside > button");
   return buttons;
@@ -38,25 +36,27 @@ async function createButtons(excludeCategories, domElement) {
 let index = 0; // For the anti-spam system
 let previousJoke;
 function getChuckNorrisQuote(e) {
-  if (index === 0) {
-    // Here we gonna add just a ForEach and retrieve the value of button
-    const category = e.target.textContent;
-    fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (previousJoke === data.value) {
-          console.log("same joke fetched again, fetching new one");
-          getChuckNorrisQuote();
-        } else {
-          console.log(data.value);
-          previousJoke = data.value;
-          document.querySelector(".results").textContent = "";
-          cursor.remove();
-          typewriter(data.value, 0);
-        }
-      })
-      .catch((error) => console.log(error));
-  }
+  
+    if(index === 0) {
+      // Here we gonna add just a ForEach and retrieve the value of button
+        const category = e.target.textContent.toLowerCase()
+        fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
+        .then(response => response.json())
+        .then(data => {
+          if(previousJoke === data.value){
+            console.log("same joke fetched again, fetching new one")
+            getChuckNorrisQuote();
+          }else{
+            console.log(data.value)
+            previousJoke = data.value
+            document.querySelector(".results").textContent = ""
+            cursor.remove()
+            typewriter(data.value, 0)
+          }
+            
+        })
+        .catch(error => console.log(error));
+    }
 }
 
 function typewriter(text, i) {
@@ -69,6 +69,11 @@ function typewriter(text, i) {
     results.appendChild(cursor);
     index = 0; // For the anti-spam system
   }
+}
+
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 // ------ ASIDE MENU --------//
