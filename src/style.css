@@ -65,6 +65,9 @@ body {
 }
 
 /*** COLUMN LEFT ***/
+.menu-icon {
+  display: none;
+}
 .column-left {
   display: flex;
   flex-direction: column;
