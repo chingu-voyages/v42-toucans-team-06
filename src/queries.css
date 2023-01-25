@@ -11,6 +11,34 @@
 
 /* Portrait tablet to landscape and desktop */
 @media (max-width: 979px) {
+  .page-section {
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+  }
+  .column-right {
+    width: auto;
+  }
+  .page-header--first {
+    font-size: 5.5rem;
+    height: 6rem;
+  }
+  .page-header--second {
+    font-size: 3.25rem;
+  }
+  .chuck-img {
+    width: 300px;
+  }
+  .h3 {
+    font-size: 1.2rem;
+  }
+  .img-container {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 3;
+    margin-top: auto;
+  }
+  .quote-text {
+    font-size: 0.9rem;
+  }
 }
 
 /* Landscape phone to portrait tablet */
