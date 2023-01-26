@@ -1,14 +1,25 @@
-# voyage-tasks
+# Chuck Norris Quotes
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+## Table *of* content
+1. [Overview](#overview)
+1. [Features](#features)
+1. [Contributers](#contributers)
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+## Overview
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+[![overview](./src/assets/images/screenshot.png)](https://chingu-voyages.github.io/v42-toucans-team-06/src/)
+This app was created for the Chingu Voyage 42. "Chuck Norris Quotes" is an application that retrieves jokes from  [Chuck Norris Facts API](https://api.chucknorris.io/), depending on the category chosen by the user, the joke is displayed !
 
-> Own it & Make it your Own!
+**LIVE LINK**: https://chingu-voyages.github.io/v42-toucans-team-06/src/
+
+## Features
+- Clicking on a button of category then we display a joke.
+- Typing effect on the display of joke.
+- ............
+
+## Contributers
+> -[Emma Eide]()
+>
+> -[Mamadou Maikoke Traore]()
+>
+> .......
