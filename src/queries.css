@@ -1,0 +1,203 @@
+/* ----------------------------------------- */
+/* Large desktop */
+@media (max-width: 1300px) {
+  .page-section {
+    width: 90%;
+  }
+  .column-left,
+  .column-right {
+    justify-self: center;
+  }
+}
+
+/* ----------------------------------------- */
+/* Portrait tablet to landscape and desktop */
+@media (max-width: 979px) {
+  .page-section {
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+  }
+  .column-right {
+    width: auto;
+  }
+
+  /* TITLE */
+  .page-header--first {
+    font-size: 5.5rem;
+    height: 6rem;
+  }
+  .page-header--second {
+    font-size: 3.25rem;
+  }
+
+  /* QUESTION */
+  .h3 {
+    font-size: 1.2rem;
+  }
+
+  /* IMAGE */
+  .chuck-img {
+    width: 300px;
+  }
+  .img-container {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 3;
+    margin-top: auto;
+  }
+
+  /* QUOTE CARD */
+  .quote-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* ----------------------------------------- */
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  html {
+    position: relative;
+  }
+  .page-section {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+  .column-right {
+    margin-left: 3.5rem;
+    margin-right: 2rem;
+  }
+
+  /* TITLE */
+  .page-header--first {
+    font-size: 4.5rem;
+    height: 5rem;
+    letter-spacing: 0.2rem;
+  }
+  .page-header--second {
+    font-size: 2.25rem;
+  }
+
+  /* QUESTION */
+  .h3 {
+    font-size: 0.9rem;
+  }
+
+  /* QUOTE CARD */
+  .quote-card {
+    padding: 2rem;
+  }
+
+  /* ASIDE MENU */
+  .body {
+    overflow: hidden;
+  }
+  .menu-icon-section {
+    position: absolute;
+    top: 40%;
+    right: 0.3%;
+  }
+  .menu-icon {
+    display: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: #896a3b;
+  }
+  .menu-icon.open {
+    display: block;
+  }
+  .column-left {
+    background-color: rgba(208, 195, 177, 0.9);
+    padding: 2rem;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 60%;
+    align-items: center;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  .column-left.close {
+    left: -63%;
+    transition: all 1s ease-in-out;
+    box-shadow: none;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+  }
+  .column-left.close:hover {
+    left: -62%;
+  }
+  .btn {
+    width: 70%;
+  }
+}
+
+/* ----------------------------------------- */
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .page-section {
+    margin-bottom: 10rem;
+  }
+
+  /* ASIDE MENU */
+  .column-left.close {
+    left: -65%;
+  }
+  .column-left.close:hover {
+    left: -63%;
+  }
+
+  /* TITLE */
+  .page-header--first {
+    font-size: 3.5rem;
+    height: 4rem;
+    letter-spacing: 0.2rem;
+  }
+  .page-header--second {
+    font-size: 1.7rem;
+    letter-spacing: 0.05rem;
+  }
+
+  /* QUESTION */
+  .h3 {
+    margin-top: 0.7rem;
+    font-size: 0.7rem;
+    grid-row: 4;
+  }
+
+  /* IMAGE */
+  .img-container {
+    grid-row: 4 / span 2;
+    margin-top: 2rem;
+  }
+  .chuck-img {
+    width: 200px;
+  }
+
+  /* QUOTE CARD */
+  .quote-card {
+    padding: 1rem;
+  }
+  .quote-text {
+    font-size: 0.7rem;
+  }
+
+  /* FOOTER */
+  .creators {
+    flex-direction: column;
+    gap: 0.7rem;
+    text-align: center;
+  }
+  .creator-link {
+    align-self: center;
+    border-right: none;
+    width: 50%;
+    padding-bottom: 0.7rem;
+    border-bottom: 0.5px solid rgba(137, 106, 59, 0.45);
+  }
+  .footer-title {
+    margin-bottom: 2rem;
+  }
+}

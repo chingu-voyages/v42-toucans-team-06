@@ -65,6 +65,9 @@ body {
 }
 
 /*** COLUMN LEFT ***/
+.menu-icon {
+  display: none;
+}
 .column-left {
   display: flex;
   flex-direction: column;
@@ -72,6 +75,7 @@ body {
   align-self: flex-end;
   opacity: 0.4;
   transition: all 0.5s;
+  justify-content: space-around;
 }
 
 .column-left:hover {
@@ -99,12 +103,11 @@ body {
   background-color: #c18b39;
 }
 
-.btn:active{
+.btn:active {
   background-color: #c18b39;
   box-shadow: inset 0px 0px 11px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-
 
 /*** COLUMN RIGHT ***/
 .column-right {
@@ -166,32 +169,34 @@ body {
   display: inline-block;
   color: #896a3b;
   text-align: center;
-  /* font-size: 1.25rem; */
   font-size: 1rem;
 }
 
-/* TYPING EFFECT CSS */
-.quote-text{
+/**** TYPING EFFECT CSS ****/
+.quote-text {
   position: relative;
 }
 
-#cursor{
+#cursor {
   display: inline;
   background-color: #896a3b;
   width: 3px;
   height: 20px;
   position: absolute;
   animation: blink 0.7s infinite;
-
 }
 /* ****** */
 
-
-
-@keyframes blink{
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*** FOOTER ***/

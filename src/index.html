@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/src/queries.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,12 +17,24 @@
   </head>
   <body>
     <main class="page-section grid">
-      <aside class="column-left">
+      <aside class="column-left close" id="aside">
         <h3 class="categories-title font-rye">CATEGORIES</h3>
         <!-- dynamically create buttons -->
+        <div class="menu-icon-section">
+          <ion-icon
+            name="chevron-forward-outline"
+            class="menu-icon open"
+            id="arrow-right"
+          ></ion-icon>
+          <ion-icon
+            name="chevron-back-outline"
+            class="menu-icon"
+            id="arrow-left"
+          ></ion-icon>
+        </div>
       </aside>
 
-      <section class="column-right">
+      <section class="column-right" id="column-right">
         <header class="page-header">
           <h1 class="page-header--first font-rye">Chuck</h1>
           <h2 class="page-header--second font-rye">Norris</h2>
@@ -34,15 +47,22 @@
             src="../src/assets/images/ChuckNorris.png"
             width="400"
           />
-        </div>  
-    
-        
+        </div>
+
         <box class="quote-card results-container">
-            <p class="quote-text font-rye results">&#8592; Choose a category</p>
+          <p class="quote-text font-rye results">&#8592; Choose a category</p>
         </box>
       </section>
     </main>
     <script src="./main.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 
   <footer>
