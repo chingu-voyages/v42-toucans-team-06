@@ -7,10 +7,12 @@
 
 ## Overview
 
-[![overview](./src/assets/images/screenshot.png)](https://chingu-voyages.github.io/v42-toucans-team-06/src/)
 This app was created for the Chingu Voyage 42. "Chuck Norris Quotes" is an application that retrieves jokes from  [Chuck Norris Facts API](https://api.chucknorris.io/), depending on the category chosen by the user, the joke is displayed !
 
 **LIVE LINK**: https://chingu-voyages.github.io/v42-toucans-team-06/src/
+
+[![overview](./src/assets/images/screenshot.png)](https://chingu-voyages.github.io/v42-toucans-team-06/src/)
+
 
 ## Features
 - Clicking on a button of category then we display a joke.
