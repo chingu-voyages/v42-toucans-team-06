@@ -142,11 +142,21 @@
   }
 
   /* ASIDE MENU */
+  .column-left {
+    top: auto;
+    bottom: auto;
+    height: 80vh;
+    gap: 0.3rem;
+  }
+
   .column-left.close {
     left: -65%;
   }
   .column-left.close:hover {
     left: -63%;
+  }
+  .column-right {
+    margin-top: 8rem;
   }
 
   /* TITLE */
