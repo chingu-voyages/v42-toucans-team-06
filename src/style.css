@@ -173,6 +173,8 @@ body {
 }
 
 .rate-quote-line {
+  font-size: 1rem;
+  padding-top: 2rem;
   color: #896a3b;
   text-align: center;
 }
