@@ -238,3 +238,6 @@ body {
 .erase-border {
   border: none;
 }
+.footer-icon {
+  padding-right: 0.3rem;
+}
