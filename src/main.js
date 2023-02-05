@@ -109,6 +109,12 @@ closeBtn.onclick = function () {
 
 // CREATE RATE COMPONENT
 function createRateComponent(){
+   
+  
+  
+    
+
+
     const quoteCard = document.querySelector(".quote-card");
     const ratingLine = document.createElement('p');
     ratingLine.classList.add('rate-quote-line', 'font-lato');
@@ -120,11 +126,15 @@ function createRateComponent(){
       star.dataset.value = j;
       ratingLine.appendChild(star);
     }
-  
+    
   quoteCard.appendChild(ratingLine);
+  if (quoteCard.children.length > 2 && quoteCard.contains(ratingLine)){
+    quoteCard.removeChild(quoteCard.lastElementChild.previousElementSibling);
+  }
+  
+  
   const stars = ratingLine.querySelectorAll(".star");
   
- 
 
   // FOR THE SELECTION OF STAR
   function selectStar(e){
