@@ -72,7 +72,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  align-self: flex-end;
+  align-self: end;
+  margin-bottom: 5rem;
   opacity: 0.4;
   transition: all 0.5s;
   justify-content: space-around;
@@ -99,11 +100,13 @@ body {
   cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover,
+.btn--rate:hover {
   background-color: #c18b39;
 }
 
-.btn:active {
+.btn:active,
+.btn--rate:active {
   background-color: #c18b39;
   box-shadow: inset 0px 0px 11px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -160,9 +163,10 @@ body {
   border: 1.5px solid #5f4723;
   border-radius: 8px;
   grid-column: 1 / span 2;
-  padding: 3rem 3rem 1.5rem 3rem;
+  padding: 3rem 3rem 0.4rem 3rem;
   background-color: rgba(95, 71, 35, 0.09);
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
 }
 .quote-text {
   /* display: block; */
@@ -175,15 +179,29 @@ body {
 .rate-quote-line {
   font-size: 1rem;
   padding-top: 2rem;
-  color: #896a3b;
+  color: rgba(95, 71, 35, 0.492);
   text-align: center;
 }
 .star {
   color: rgba(95, 71, 35, 0.492);
   cursor: pointer;
 }
+
 .star:hover {
   color: #ffc831;
+}
+
+.btn--rate {
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  color: #fff9f0;
+  background-color: #896a3b;
+  border-style: none;
+  border-radius: 5px;
+  cursor: pointer;
+  grid-column: 1 / span 2;
+  justify-self: center;
+  margin-left: 1.5rem;
 }
 
 /**** TYPING EFFECT CSS ****/
