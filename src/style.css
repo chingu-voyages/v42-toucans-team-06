@@ -53,6 +53,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 81rem;
+  position: relative;
 }
 .page-section {
   width: 70%;
@@ -182,6 +183,7 @@ body {
   color: rgba(95, 71, 35, 0.492);
   text-align: center;
 }
+
 .star {
   color: rgba(95, 71, 35, 0.492);
   cursor: pointer;
@@ -201,7 +203,6 @@ body {
   cursor: pointer;
   grid-column: 1 / span 2;
   justify-self: center;
-  margin-left: 1.5rem;
 }
 
 /**** TYPING EFFECT CSS ****/
@@ -229,6 +230,68 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+/*** MODAL ***/
+.modal-section {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 5%;
+  height: 80vh;
+  width: 80vw;
+  background-color: #e2dbcd;
+  padding: 0;
+  border: 1px solid #5f4723;
+  width: 80%;
+  box-shadow: 0 0px 200px 0 rgba(39, 29, 14, 0.899);
+  border-radius: 8px;
+  overflow-y: initial !important;
+  display: block !important;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2rem;
+  color: #5f4723;
+  background-color: rgba(95, 71, 35, 0.1);
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid rgba(95, 71, 35, 0.3);
+  border-radius: 8px;
+}
+.modal-title {
+  font-size: 2rem;
+}
+.close-icon {
+  font-size: 2.5rem;
+  position: absolute;
+  right: 1.5%;
+  top: 10%;
+}
+.close-icon:hover {
+  color: #c18b39;
+  cursor: pointer;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 2rem 4rem;
+  height: 54vh;
+  overflow-y: auto;
+}
+.best-quote {
+  color: rgba(95, 71, 35, 0.95);
+  font-size: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(95, 71, 35, 0.151);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*** FOOTER ***/
