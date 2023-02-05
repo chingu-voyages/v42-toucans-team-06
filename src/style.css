@@ -53,7 +53,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 81rem;
-  overflow-y: hidden;
+  position: relative;
 }
 .page-section {
   width: 70%;
@@ -73,7 +73,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  align-self: flex-end;
+  align-self: end;
+  margin-bottom: 5rem;
   opacity: 0.4;
   transition: all 0.5s;
   justify-content: space-around;
@@ -100,11 +101,13 @@ body {
   cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover,
+.btn--rate:hover {
   background-color: #c18b39;
 }
 
-.btn:active {
+.btn:active,
+.btn--rate:active {
   background-color: #c18b39;
   box-shadow: inset 0px 0px 11px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -161,9 +164,10 @@ body {
   border: 1.5px solid #5f4723;
   border-radius: 8px;
   grid-column: 1 / span 2;
-  padding: 3rem;
+  padding: 3rem 3rem 0.4rem 3rem;
   background-color: rgba(95, 71, 35, 0.09);
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
 }
 .quote-text {
   /* display: block; */
@@ -171,6 +175,34 @@ body {
   color: #896a3b;
   text-align: center;
   font-size: 1rem;
+}
+
+.rate-quote-line {
+  font-size: 1rem;
+  padding-top: 2rem;
+  color: rgba(95, 71, 35, 0.492);
+  text-align: center;
+}
+
+.star {
+  color: rgba(95, 71, 35, 0.492);
+  cursor: pointer;
+}
+
+.star:hover {
+  color: #ffc831;
+}
+
+.btn--rate {
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  color: #fff9f0;
+  background-color: #896a3b;
+  border-style: none;
+  border-radius: 5px;
+  cursor: pointer;
+  grid-column: 1 / span 2;
+  justify-self: center;
 }
 
 /**** TYPING EFFECT CSS ****/
@@ -200,6 +232,73 @@ body {
   }
 }
 
+/*** MODAL ***/
+.modal-section {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 5%;
+  height: 80vh;
+  width: 80vw;
+  background-color: #e2dbcd;
+  padding: 0;
+  border: 1px solid #5f4723;
+  width: 80%;
+  box-shadow: 0 0px 200px 0 rgba(39, 29, 14, 0.899);
+  border-radius: 8px;
+  overflow-y: initial !important;
+  display: none;
+  transition: all 2s;
+}
+.modal--close {
+  display: none;
+  opacity: 0;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2rem;
+  color: #5f4723;
+  background-color: rgba(95, 71, 35, 0.1);
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid rgba(95, 71, 35, 0.3);
+  border-radius: 8px;
+}
+.modal-title {
+  font-size: 2rem;
+}
+.close-icon {
+  font-size: 2.5rem;
+  position: absolute;
+  right: 1.5%;
+  top: 10%;
+}
+.close-icon:hover {
+  color: #c18b39;
+  cursor: pointer;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 2rem 4rem;
+  height: 54vh;
+  overflow-y: auto;
+}
+.best-quote {
+  color: rgba(95, 71, 35, 0.95);
+  font-size: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(95, 71, 35, 0.151);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*** FOOTER ***/
 .footer-section {
   text-align: center;
@@ -210,20 +309,26 @@ body {
 .footer-title {
   color: rgba(137, 106, 59, 0.55);
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .creators {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 0.7rem;
+  text-align: center;
 }
-
 .creator-link {
   color: rgba(137, 106, 59, 0.45);
-  font-size: 0.8rem;
+  align-self: center;
+  border-right: none;
+  width: 50%;
   text-decoration: none;
-  border-right: 1px solid rgba(137, 106, 59, 0.45);
-  padding: 0 0.7rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 0.5px solid rgba(137, 106, 59, 0.45);
+  font-size: 0.8rem;
+  display: inline-block;
+  width: 20%;
 }
 
 .creator-link:hover {
@@ -232,4 +337,7 @@ body {
 
 .erase-border {
   border: none;
+}
+.footer-icon {
+  padding-right: 0.3rem;
 }

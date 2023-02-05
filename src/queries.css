@@ -192,18 +192,7 @@
   }
 
   /* FOOTER */
-  .creators {
-    flex-direction: column;
-    gap: 0.7rem;
-    text-align: center;
-  }
-  .creator-link {
-    align-self: center;
-    border-right: none;
-    width: 50%;
-    padding-bottom: 0.7rem;
-    border-bottom: 0.5px solid rgba(137, 106, 59, 0.45);
-  }
+
   .footer-title {
     margin-bottom: 2rem;
   }

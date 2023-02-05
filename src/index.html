@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="queries.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/7e265188ef.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Lato&family=Rye&display=swap"
       rel="stylesheet"
@@ -17,6 +21,7 @@
   </head>
   <body>
     <main class="page-section grid">
+      <!-- ASIDE MENU -->
       <aside class="column-left close" id="aside">
         <h3 class="categories-title font-rye">CATEGORIES</h3>
         <!-- dynamically create buttons -->
@@ -34,6 +39,7 @@
         </div>
       </aside>
 
+      <!-- MAIN COLUMN -->
       <section class="column-right" id="column-right">
         <header class="page-header">
           <h1 class="page-header--first font-rye">Chuck</h1>
@@ -49,9 +55,80 @@
           />
         </div>
 
+        <!-- DISPLAY QUOTES -->
         <box class="quote-card results-container">
           <p class="quote-text font-rye results">&#8592; Choose a category</p>
+          <p class="rate-quote-line font-lato">
+            Rate this quote <i class="fa-solid fa-star star star1"></i
+            ><i class="fa-solid fa-star star star2"></i
+            ><i class="fa-solid fa-star star star3"></i
+            ><i class="fa-solid fa-star star star4"></i
+            ><i class="fa-solid fa-star star star5"></i>
+          </p>
         </box>
+
+        <!-- MODAL -->
+        <button id="modalBtn" class="btn--rate font-rye">
+          10 Best Rated Quotes
+        </button>
+      </section>
+      <section id="modal" class="modal-section font-rye">
+        <header class="modal-header">
+          <i id="closeBtn" class="fa-solid fa-xmark close-icon"></i>
+          <h2 class="modal-title">10 Best Rated Quotes</h2>
+        </header>
+
+        <!-- TODO Where you add the best rated quotes -->
+        <div id="bestQuoteBox" class="modal-body">
+          <p class="best-quote">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
+            soluta deleniti, repellendus, voluptates voluptatibus unde obcaecati
+            aliquam dignissimos ut rem quam dolorem iste eius itaque ex esse
+            qui. A, eaque?
+          </p>
+          <p class="best-quote">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, cum at
+            labore dolore, accusamus, architecto corporis soluta dolorum
+            accusantium nihil odit corrupti alias exercitationem nam voluptatem
+            veritatis reiciendis repudiandae animi?
+          </p>
+          <p class="best-quote">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, cum at
+            labore dolore, accusamus, architecto corporis soluta dolorum
+            accusantium nihil odit corrupti alias exercitationem nam voluptatem
+            veritatis reiciendis repudiandae animi?
+          </p>
+          <p class="best-quote">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, cum at
+            labore dolore, accusamus, architecto corporis soluta dolorum
+            accusantium nihil odit corrupti alias exercitationem nam voluptatem
+            veritatis reiciendis repudiandae animi?
+          </p>
+          <p class="best-quote">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, cum at
+            labore dolore, accusamus, architecto corporis soluta dolorum
+            accusantium nihil odit corrupti alias exercitationem nam voluptatem
+            veritatis reiciendis repudiandae animi?
+          </p>
+          <p class="best-quote">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, cum at
+            labore dolore, accusamus, architecto corporis soluta dolorum
+            accusantium nihil odit corrupti alias exercitationem nam voluptatem
+            veritatis reiciendis repudiandae animi?
+          </p>
+          <p class="best-quote">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, cum at
+            labore dolore, accusamus, architecto corporis soluta dolorum
+            accusantium nihil odit corrupti alias exercitationem nam voluptatem
+            veritatis reiciendis repudiandae animi?
+          </p>
+          <p class="best-quote">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, cum at
+            labore dolore, accusamus, architecto corporis soluta dolorum
+            accusantium nihil odit corrupti alias exercitationem nam voluptatem
+            veritatis reiciendis repudiandae animi?
+          </p>
+        </div>
       </section>
     </main>
     <script src="./main.js"></script>
@@ -73,19 +150,14 @@
           class="creator-link"
           target="_blank"
           href="https://github.com/emmaelisabetheide"
-          >Emma Eide</a
-        >
-        <a
-          class="creator-link"
-          target="_blank"
-          href="https://github.com/MaikoCode"
-          >Mamadou Maikoke Traore</a
+          ><i class="fa-brands fa-github footer-icon"></i> Emma Eide</a
         >
         <a
           class="creator-link erase-border"
           target="_blank"
-          href="https://github.com/DVictor101"
-          >DVictor</a
+          href="https://github.com/MaikoCode"
+          ><i class="fa-brands fa-github footer-icon"></i> Mamadou Maikoke
+          Traore</a
         >
       </div>
     </section>
