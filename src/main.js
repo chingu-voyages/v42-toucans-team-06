@@ -87,3 +87,21 @@ if (asideMenu) {
     arrowIconLeft.classList.toggle("open");
   });
 }
+
+// ------ RATING STARS --------//
+
+// ------ 10 BEST RATED QUOTES MODAL --------//
+const quotesBtn = document.getElementById("modalBtn");
+const closeBtn = document.getElementById("closeBtn");
+const modalCard = document.getElementById("modal");
+const quoteBox = document.getElementById("bestQuoteBox");
+
+// OPEN MODAL WINDOW
+quotesBtn.onclick = function () {
+  modalCard.style.display = "block";
+};
+// CLOSE MODAL WINDOW WITH BUTTON
+closeBtn.onclick = function () {
+  modalCard.style.display = "none";
+};
+TODO; // CLOSE MODAL WINDOW CLICK OUTSIDE

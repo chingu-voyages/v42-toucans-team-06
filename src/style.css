@@ -250,7 +250,12 @@ body {
   box-shadow: 0 0px 200px 0 rgba(39, 29, 14, 0.899);
   border-radius: 8px;
   overflow-y: initial !important;
-  display: block !important;
+  display: none;
+  transition: all 2s;
+}
+.modal--close {
+  display: none;
+  opacity: 0;
 }
 
 /* Modal Header */
