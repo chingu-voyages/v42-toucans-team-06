@@ -11,6 +11,7 @@ buttonsResponse.then((buttons) => {
   buttons.forEach((button) => {
     button.addEventListener("click", (e) => {
       getChuckNorrisQuote(e);
+      createRateComponent();
     });
   });
 });
@@ -104,4 +105,61 @@ quotesBtn.onclick = function () {
 closeBtn.onclick = function () {
   modalCard.style.display = "none";
 };
-TODO; // CLOSE MODAL WINDOW CLICK OUTSIDE
+// TODO; // CLOSE MODAL WINDOW CLICK OUTSIDE
+
+// CREATE RATE COMPONENT
+function createRateComponent(){
+    const quoteCard = document.querySelector(".quote-card");
+    const ratingLine = document.createElement('p');
+    ratingLine.classList.add('rate-quote-line', 'font-lato');
+    ratingLine.innerHTML = "Rate this quote ";
+  
+    for (let j = 1; j <= 5; j++) {
+      const star = document.createElement('i');
+      star.classList.add('fa-solid', 'fa-star', 'star', `star${j}`);
+      star.dataset.value = j;
+      ratingLine.appendChild(star);
+    }
+  
+  quoteCard.appendChild(ratingLine);
+  const stars = ratingLine.querySelectorAll(".star");
+  
+ 
+
+  // FOR THE SELECTION OF STAR
+  function selectStar(e){
+    const selectedValue = e.target.getAttribute("data-value");
+    for (let star of stars){
+      star.classList.remove("selected");
+      if(star.getAttribute("data-value") <= selectedValue){
+        star.classList.add("selected");
+      }
+  
+      if(star.getAttribute("data-value") > selectedValue){
+        star.classList.remove("hover");
+      }
+  
+    }
+  }
+
+  stars.forEach(star => {
+      star.addEventListener("click", selectStar);
+  })
+
+  // FOR THE HOVER EFFECT
+for (let i = 0; i < stars.length; i++) {
+  stars[i].addEventListener("mouseover", function(e) {
+    for (let j = 0; j <= i; j++) {
+      stars[j].classList.add("hover")
+    }
+  });
+  
+  stars[i].addEventListener("mouseout", function(e) {
+    for (let j = 0; j <= i; j++) {
+      if (!stars[j].classList.contains("selected")) {
+        stars[j].classList.remove("hover");
+      }
+    }
+  });
+} 
+}

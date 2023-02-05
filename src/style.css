@@ -54,6 +54,7 @@ body {
   margin-right: auto;
   max-width: 81rem;
   position: relative;
+  
 }
 .page-section {
   width: 70%;
@@ -189,9 +190,15 @@ body {
   cursor: pointer;
 }
 
-.star:hover {
+.star:hover, .hover {
   color: #ffc831;
 }
+
+/* FOR THE SELECTION OF STAR */
+.selected {
+  color: #ffc831;
+}
+/*  */
 
 .btn--rate {
   padding: 0.6rem 1.4rem;
