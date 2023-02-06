@@ -5,6 +5,20 @@ const cursor = document.createElement("span");
 const columnLeft = document.querySelector(".column-left");
 cursor.setAttribute("id", "cursor");
 
+
+const modal = document.querySelector(".modal-body");
+const ratedQuotes = JSON.parse(localStorage.getItem("ChuckNorrisQuotes")) || [];
+
+
+
+  //  COMPLETE THE TOP 10
+  for(let i = 0; i < ratedQuotes.length; i++){
+    const bestQuote = document.createElement("p");
+    bestQuote.classList.add("best-quote");
+    bestQuote.textContent = ratedQuotes[i].quote;
+    modal.appendChild(bestQuote);
+  }
+    
 const buttonsResponse = createButtons(excludeCategories, columnLeft);
 buttonsResponse.then((buttons) => console.log(buttons));
 buttonsResponse.then((buttons) => {
@@ -15,6 +29,9 @@ buttonsResponse.then((buttons) => {
     });
   });
 });
+
+// createRateComponent();
+
 
 async function createButtons(excludeCategories, domElement) {
   const response = await fetch("https://api.chucknorris.io/jokes/categories");
@@ -38,7 +55,7 @@ let index = 0; // For the anti-spam system
 let previousJoke;
 function getChuckNorrisQuote(e) {
   if (index === 0) {
-    // Here we gonna add just a ForEach and retrieve the value of button
+    
     const category = e.target.textContent.toLowerCase();
     fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
       .then((response) => response.json())
@@ -107,13 +124,12 @@ closeBtn.onclick = function () {
 };
 // TODO; // CLOSE MODAL WINDOW CLICK OUTSIDE
 
+
 // CREATE RATE COMPONENT
 function createRateComponent(){
-   
-  
-  
-    
-
+  // const results = document.querySelector(".results");
+    // if(results.textContent !== '← Choose a category' ){
+      console.log(results.textContent)
 
     const quoteCard = document.querySelector(".quote-card");
     const ratingLine = document.createElement('p');
@@ -148,8 +164,45 @@ function createRateComponent(){
       if(star.getAttribute("data-value") > selectedValue){
         star.classList.remove("hover");
       }
-  
+      
+    // const quotes = JSON.parse(localStorage.getItem("ChuckNorrisQuotes")) || [];
+    // const ratedQuotes = rateAndStock(quotes, star.dataset.value);
+
+    // //  UPDATE THE TOP 10
+    // modal.innerHTML = "";
+    // for(let ratedQuote of ratedQuotes){
+    //   const bestQuote = document.createElement("p");
+    //   bestQuote.classList.add("best-quote");
+    //   bestQuote.textContent = ratedQuote.quote;
+    //   modal.appendChild(bestQuote);
+    // }
+     
+
+
     }
+
+   // THE RATING SYSTEM
+const modal = document.querySelector(".modal-body");
+if(stars){
+  stars.forEach(star => {
+    star.addEventListener("click", () => {
+     const quotes = JSON.parse(localStorage.getItem("ChuckNorrisQuotes")) || [];
+     const ratedQuotes = rateAndStock(quotes, star.dataset.value);
+
+    //  UPDATE THE TOP 10
+    modal.innerHTML = "";
+    for(let ratedQuote of ratedQuotes){
+      const bestQuote = document.createElement("p");
+      bestQuote.classList.add("best-quote");
+      bestQuote.textContent = ratedQuote.quote;
+      modal.appendChild(bestQuote);
+    }
+     
+   });
+ })
+}
+     
+   
   }
 
   stars.forEach(star => {
@@ -172,4 +225,53 @@ for (let i = 0; i < stars.length; i++) {
     }
   });
 } 
+
+//THE RATING SYSTEM
+const modal = document.querySelector(".modal-body");
+if(stars){
+  stars.forEach(star => {
+    star.addEventListener("click", () => {
+     const quotes = JSON.parse(localStorage.getItem("ChuckNorrisQuotes")) || [];
+     const ratedQuotes = rateAndStock(quotes, star.dataset.value);
+
+    //  UPDATE THE TOP 10
+    modal.innerHTML = "";
+    for(let ratedQuote of ratedQuotes){
+      const bestQuote = document.createElement("p");
+      bestQuote.classList.add("best-quote");
+      bestQuote.textContent = ratedQuote.quote;
+      modal.appendChild(bestQuote);
+    }
+     
+   });
+ })
 }
+
+function sortQuotes(quotes, rate){
+ 
+    const existingQuote = quotes.find(q => q.quote === results.textContent && q.rating !== rate);
+    if (existingQuote) {
+      console.log(existingQuote);
+      existingQuote.rating = rate;
+      return quotes;
+    }
+ 
+    quotes.push({rating: rate, quote: results.textContent});
+    quotes.sort((a, b) => {return b.rating - a.rating});
+    console.log("slice: " + quotes);
+    return quotes.slice(0, 10);
+   
+}
+
+function rateAndStock(quotes, rate){
+  quotes = sortQuotes(quotes, rate);
+  console.log("test: " + quotes);
+  localStorage.setItem("ChuckNorrisQuotes", JSON.stringify(quotes));
+  const ratedQuotes = JSON.parse(localStorage.getItem("ChuckNorrisQuotes")) || [];
+  console.log(ratedQuotes);
+  return ratedQuotes;
+}
+}
+//}
+
+
