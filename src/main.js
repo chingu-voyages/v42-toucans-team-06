@@ -30,7 +30,7 @@ buttonsResponse.then((buttons) => {
   });
 });
 
-// createRateComponent();
+
 
 
 async function createButtons(excludeCategories, domElement) {
@@ -126,11 +126,10 @@ closeBtn.onclick = function () {
 
 
 // CREATE RATE COMPONENT
-function createRateComponent(){
-  // const results = document.querySelector(".results");
-    // if(results.textContent !== '← Choose a category' ){
-      console.log(results.textContent)
 
+function createRateComponent(){
+  
+ 
     const quoteCard = document.querySelector(".quote-card");
     const ratingLine = document.createElement('p');
     ratingLine.classList.add('rate-quote-line', 'font-lato');
@@ -164,45 +163,7 @@ function createRateComponent(){
       if(star.getAttribute("data-value") > selectedValue){
         star.classList.remove("hover");
       }
-      
-    // const quotes = JSON.parse(localStorage.getItem("ChuckNorrisQuotes")) || [];
-    // const ratedQuotes = rateAndStock(quotes, star.dataset.value);
-
-    // //  UPDATE THE TOP 10
-    // modal.innerHTML = "";
-    // for(let ratedQuote of ratedQuotes){
-    //   const bestQuote = document.createElement("p");
-    //   bestQuote.classList.add("best-quote");
-    //   bestQuote.textContent = ratedQuote.quote;
-    //   modal.appendChild(bestQuote);
-    // }
-     
-
-
     }
-
-   // THE RATING SYSTEM
-const modal = document.querySelector(".modal-body");
-if(stars){
-  stars.forEach(star => {
-    star.addEventListener("click", () => {
-     const quotes = JSON.parse(localStorage.getItem("ChuckNorrisQuotes")) || [];
-     const ratedQuotes = rateAndStock(quotes, star.dataset.value);
-
-    //  UPDATE THE TOP 10
-    modal.innerHTML = "";
-    for(let ratedQuote of ratedQuotes){
-      const bestQuote = document.createElement("p");
-      bestQuote.classList.add("best-quote");
-      bestQuote.textContent = ratedQuote.quote;
-      modal.appendChild(bestQuote);
-    }
-     
-   });
- })
-}
-     
-   
   }
 
   stars.forEach(star => {
@@ -226,41 +187,49 @@ for (let i = 0; i < stars.length; i++) {
   });
 } 
 
-//THE RATING SYSTEM
+// THE RATING SYSTEM
+
 const modal = document.querySelector(".modal-body");
 if(stars){
   stars.forEach(star => {
     star.addEventListener("click", () => {
      const quotes = JSON.parse(localStorage.getItem("ChuckNorrisQuotes")) || [];
+     
+     console.log("avant:")
+     console.log(quotes)
      const ratedQuotes = rateAndStock(quotes, star.dataset.value);
 
     //  UPDATE THE TOP 10
     modal.innerHTML = "";
-    for(let ratedQuote of ratedQuotes){
+    for(let i = 0; i < ratedQuotes.length; i++){
       const bestQuote = document.createElement("p");
       bestQuote.classList.add("best-quote");
-      bestQuote.textContent = ratedQuote.quote;
+      bestQuote.textContent = ratedQuotes[i].quote;
       modal.appendChild(bestQuote);
     }
-     
    });
  })
 }
 
+
+const results = document.querySelector(".results");
 function sortQuotes(quotes, rate){
- 
+  console.log("ggg")
+  console.log(quotes)
+  
     const existingQuote = quotes.find(q => q.quote === results.textContent && q.rating !== rate);
+   
     if (existingQuote) {
       console.log(existingQuote);
       existingQuote.rating = rate;
       return quotes;
+      
+    }else{
+     quotes.push({rating: rate, quote: results.textContent});
+      quotes.sort((a, b) => {return b.rating - a.rating});
+      console.log("slice: " + quotes);
+      return quotes.slice(0, 10);
     }
- 
-    quotes.push({rating: rate, quote: results.textContent});
-    quotes.sort((a, b) => {return b.rating - a.rating});
-    console.log("slice: " + quotes);
-    return quotes.slice(0, 10);
-   
 }
 
 function rateAndStock(quotes, rate){
@@ -272,6 +241,6 @@ function rateAndStock(quotes, rate){
   return ratedQuotes;
 }
 }
-//}
+
 
 
