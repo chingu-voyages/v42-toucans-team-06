@@ -267,6 +267,7 @@ body {
   position: relative;
   border-bottom: 1px solid rgba(95, 71, 35, 0.3);
   border-radius: 8px;
+  height: auto;
 }
 .modal-title {
   font-size: 2rem;
@@ -285,7 +286,6 @@ body {
 /* Modal Body */
 .modal-body {
   padding: 2rem 4rem;
-  height: 54vh;
   overflow-y: auto;
 }
 .best-quote {
