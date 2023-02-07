@@ -104,4 +104,4 @@ quotesBtn.onclick = function () {
 closeBtn.onclick = function () {
   modalCard.style.display = "none";
 };
-TODO; // CLOSE MODAL WINDOW CLICK OUTSIDE
+
