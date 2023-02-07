@@ -203,6 +203,7 @@ body {
   cursor: pointer;
   grid-column: 1 / span 2;
   justify-self: center;
+  letter-spacing: 1.5px;
 }
 
 /**** TYPING EFFECT CSS ****/
