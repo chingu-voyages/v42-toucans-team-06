@@ -104,9 +104,4 @@ quotesBtn.onclick = function () {
 closeBtn.onclick = function () {
   modalCard.style.display = "none";
 };
-// CLOSE MODAL WINDOW CLICK OUTSIDE
 
-let modalBody = document.getElementsByClassName("modal-body");
-const modalHeader = document.getElementsByClassName("modal-header");
-
-modalBody.style.height = modalCard.style.height - modalHeader.style.height;
