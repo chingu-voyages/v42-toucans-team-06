@@ -188,16 +188,7 @@ body {
   margin-right: 0.3rem;
 }
 .rate-quote-line:hover {
-  color: #e8b52a;
-}
-
-.star {
-  color: rgba(95, 71, 35, 0.492);
-  cursor: pointer;
-}
-
-.star:hover {
-  color: #ffc831;
+  color: #c18b39;
 }
 
 .btn--rate {
