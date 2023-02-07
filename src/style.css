@@ -270,7 +270,15 @@ body {
   height: auto;
 }
 .modal-title {
+  display: flex;
+  justify-content: center;
   font-size: 2rem;
+  letter-spacing: 1.5px;
+}
+.modalStar {
+  margin: 0 1rem;
+  font-size: 1rem;
+  align-self: center;
 }
 .close-icon {
   font-size: 2.5rem;
@@ -286,6 +294,7 @@ body {
 /* Modal Body */
 .modal-body {
   padding: 2rem 4rem;
+  height: 54vh;
   overflow-y: auto;
 }
 .best-quote {
