@@ -182,6 +182,13 @@ body {
   padding-top: 2rem;
   color: rgba(95, 71, 35, 0.492);
   text-align: center;
+  cursor: pointer;
+}
+.star--add {
+  margin-right: 0.3rem;
+}
+.rate-quote-line:hover {
+  color: #e8b52a;
 }
 
 .star {
