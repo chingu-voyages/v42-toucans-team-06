@@ -106,6 +106,8 @@ body {
   background-color: #c18b39;
 }
 
+
+
 .btn:active,
 .btn--rate:active {
   background-color: #c18b39;
@@ -188,6 +190,10 @@ body {
   margin-right: 0.3rem;
 }
 .rate-quote-line:hover {
+  color: #c18b39;
+}
+
+.selected{
   color: #c18b39;
 }
 
@@ -342,6 +348,7 @@ body {
 .creator-link:hover {
   color: #c18b39;
 }
+
 
 .erase-border {
   border: none;
