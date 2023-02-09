@@ -9,7 +9,6 @@ const rateLine = document.querySelector(".rate-quote-line");
 rateLine.style.display = "none";
 
 const buttonsResponse = createButtons(excludeCategories, columnLeft);
-buttonsResponse.then((buttons) => console.log(buttons));
 buttonsResponse.then((buttons) => {
   buttons.forEach((button) => {
     button.addEventListener("click", (e) => {
@@ -49,11 +48,9 @@ function getChuckNorrisQuote(e) {
       .then((response) => response.json())
       .then((data) => {
         if (previousJoke === data.value) {
-          console.log("same joke fetched again, fetching new one");
           getChuckNorrisQuote();
           addToFavorites();
         } else {
-          console.log(data.value);
           previousJoke = data.value;
           document.querySelector(".results").textContent = "";
           cursor.remove();
@@ -148,6 +145,4 @@ rateQuoteLine.addEventListener("click", (e) => {
     favoriteQuote.textContent = quotes[i];
     modal.appendChild(favoriteQuote);
   }
-  const test = JSON.parse(localStorage.getItem("ChuckNorrisApp")) || [];
-  console.log(test);
 });
