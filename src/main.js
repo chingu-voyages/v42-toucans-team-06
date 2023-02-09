@@ -137,8 +137,8 @@ for(let i = 0; i < quotes.length; i++){
   }
 
 }
-
-star.addEventListener("click", (e) => {
+const rateQuoteLine = document.querySelector(".rate-quote-line")
+rateQuoteLine.addEventListener("click", (e) => {
   if(!star.classList.contains("selected")){
     star.classList.add("selected");
     quotes.push(results.textContent);
