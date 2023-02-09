@@ -56,6 +56,14 @@
 }
 
 /* ----------------------------------------- */
+/* portrait tablet to large desktop*/
+@media (min-width: 770px) {
+  .rate-quote-line:hover {
+    color: #c18b39;
+  }
+}
+
+/* ----------------------------------------- */
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   html {
