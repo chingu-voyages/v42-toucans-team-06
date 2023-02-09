@@ -51,7 +51,7 @@ function getChuckNorrisQuote(e) {
     fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
       .then((response) => response.json())
       .then((data) => {
-        
+
         if (previousJoke === data.value) {
           console.log("same joke fetched again, fetching new one");
           getChuckNorrisQuote();
@@ -66,7 +66,7 @@ function getChuckNorrisQuote(e) {
       })
       .catch((error) => console.log(error));
   }
- 
+
 
 }
 
@@ -118,47 +118,45 @@ closeBtn.onclick = function () {
   modalCard.style.display = "none";
 };
 
-
-
-
-// FAVORITE FEATURE 
+// FAVORITE FEATURE
 const star = document.querySelector(".star--add");
 const modal = document.querySelector(".modal-body");
 let quotes = JSON.parse(localStorage.getItem("ChuckNorrisApp")) || [];
 
 
 // WE LOAD THE DATA IF IT EXISTS
-if(quotes){
-for(let i = 0; i < quotes.length; i++){
-  const favoriteQuote = document.createElement("p");
-  favoriteQuote.classList.add("best-quote");
-  favoriteQuote.textContent = quotes[i];
-  modal.appendChild(favoriteQuote);
-  }
-
-}
-
-star.addEventListener("click", (e) => {
-  if(!star.classList.contains("selected")){
-    star.classList.add("selected");
-    quotes.push(results.textContent);
-  }else{
-    star.classList.remove("selected");
-    if(quotes.includes(results.textContent)){
-      quotes = quotes.filter(quote => {return quote !== results.textContent});
-    }
-    if(quotes.includes(results.textContent)) star.classList.add("selected");
-  }
-  localStorage.setItem("ChuckNorrisApp", JSON.stringify(quotes));
-  
-  modal.textContent = "";
-  for(let i = 0; i < quotes.length; i++){
+if (quotes) {
+  for (let i = 0; i < quotes.length; i++) {
     const favoriteQuote = document.createElement("p");
     favoriteQuote.classList.add("best-quote");
     favoriteQuote.textContent = quotes[i];
     modal.appendChild(favoriteQuote);
+  }
+  
+}
+
+star.addEventListener("click", (e) => {
+  if (!star.classList.contains("selected")) {
+    star.classList.add("selected");
+    quotes.push(results.textContent);
+  } else {
+    star.classList.remove("selected");
+    if (quotes.includes(results.textContent)) {
+      quotes = quotes.filter((quote) => {
+        return quote !== results.textContent;
+      });
     }
+    if (quotes.includes(results.textContent)) star.classList.add("selected");
+  }
+  localStorage.setItem("ChuckNorrisApp", JSON.stringify(quotes));
+
+  modal.textContent = "";
+  for (let i = 0; i < quotes.length; i++) {
+    const favoriteQuote = document.createElement("p");
+    favoriteQuote.classList.add("best-quote");
+    favoriteQuote.textContent = quotes[i];
+    modal.appendChild(favoriteQuote);
+  }
   const test = JSON.parse(localStorage.getItem("ChuckNorrisApp")) || [];
   console.log(test);
 });
-
