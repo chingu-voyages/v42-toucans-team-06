@@ -5,11 +5,8 @@ const cursor = document.createElement("span");
 const columnLeft = document.querySelector(".column-left");
 cursor.setAttribute("id", "cursor");
 
-
-
 const rateLine = document.querySelector(".rate-quote-line");
 rateLine.style.display = "none";
-
 
 const buttonsResponse = createButtons(excludeCategories, columnLeft);
 buttonsResponse.then((buttons) => console.log(buttons));
@@ -51,7 +48,6 @@ function getChuckNorrisQuote(e) {
     fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
       .then((response) => response.json())
       .then((data) => {
-
         if (previousJoke === data.value) {
           console.log("same joke fetched again, fetching new one");
           getChuckNorrisQuote();
@@ -66,8 +62,6 @@ function getChuckNorrisQuote(e) {
       })
       .catch((error) => console.log(error));
   }
-
-
 }
 
 function typewriter(text, i) {
@@ -101,9 +95,7 @@ if (asideMenu) {
   });
 }
 
-// ------ RATING STARS --------//
-
-// ------ 10 BEST RATED QUOTES MODAL --------//
+// ------ FAVOURITE QUOTES MODAL --------//
 const quotesBtn = document.getElementById("modalBtn");
 const closeBtn = document.getElementById("closeBtn");
 const modalCard = document.getElementById("modal");
@@ -118,11 +110,10 @@ closeBtn.onclick = function () {
   modalCard.style.display = "none";
 };
 
-// FAVORITE FEATURE
-const star = document.querySelector(".star--add");
+// ------ FAVOURITE FUTURE --------//
+const star = document.querySelector(".rate-quote-line");
 const modal = document.querySelector(".modal-body");
 let quotes = JSON.parse(localStorage.getItem("ChuckNorrisApp")) || [];
-
 
 // WE LOAD THE DATA IF IT EXISTS
 if (quotes) {
@@ -132,7 +123,6 @@ if (quotes) {
     favoriteQuote.textContent = quotes[i];
     modal.appendChild(favoriteQuote);
   }
-  
 }
 
 star.addEventListener("click", (e) => {
