@@ -5,11 +5,8 @@ const cursor = document.createElement("span");
 const columnLeft = document.querySelector(".column-left");
 cursor.setAttribute("id", "cursor");
 
-
-
 const rateLine = document.querySelector(".rate-quote-line");
 rateLine.style.display = "none";
-
 
 const buttonsResponse = createButtons(excludeCategories, columnLeft);
 buttonsResponse.then((buttons) => console.log(buttons));
@@ -51,7 +48,6 @@ function getChuckNorrisQuote(e) {
     fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
       .then((response) => response.json())
       .then((data) => {
-        
         if (previousJoke === data.value) {
           console.log("same joke fetched again, fetching new one");
           getChuckNorrisQuote();
@@ -66,8 +62,6 @@ function getChuckNorrisQuote(e) {
       })
       .catch((error) => console.log(error));
   }
- 
-
 }
 
 function typewriter(text, i) {
@@ -101,9 +95,7 @@ if (asideMenu) {
   });
 }
 
-// ------ RATING STARS --------//
-
-// ------ 10 BEST RATED QUOTES MODAL --------//
+// ------ FAVOURITE QUOTES MODAL --------//
 const quotesBtn = document.getElementById("modalBtn");
 const closeBtn = document.getElementById("closeBtn");
 const modalCard = document.getElementById("modal");
@@ -118,47 +110,44 @@ closeBtn.onclick = function () {
   modalCard.style.display = "none";
 };
 
-
-
-
-// FAVORITE FEATURE 
-const star = document.querySelector(".star--add");
+// ------ FAVOURITE FUTURE --------//
+const star = document.querySelector(".rate-quote-line");
 const modal = document.querySelector(".modal-body");
 let quotes = JSON.parse(localStorage.getItem("ChuckNorrisApp")) || [];
 
-
 // WE LOAD THE DATA IF IT EXISTS
-if(quotes){
-for(let i = 0; i < quotes.length; i++){
-  const favoriteQuote = document.createElement("p");
-  favoriteQuote.classList.add("best-quote");
-  favoriteQuote.textContent = quotes[i];
-  modal.appendChild(favoriteQuote);
+if (quotes) {
+  for (let i = 0; i < quotes.length; i++) {
+    const favoriteQuote = document.createElement("p");
+    favoriteQuote.classList.add("best-quote");
+    favoriteQuote.textContent = quotes[i];
+    modal.appendChild(favoriteQuote);
   }
-
 }
+
 const rateQuoteLine = document.querySelector(".rate-quote-line")
 rateQuoteLine.addEventListener("click", (e) => {
   if(!star.classList.contains("selected")){
     star.classList.add("selected");
     quotes.push(results.textContent);
-  }else{
+  } else {
     star.classList.remove("selected");
-    if(quotes.includes(results.textContent)){
-      quotes = quotes.filter(quote => {return quote !== results.textContent});
+    if (quotes.includes(results.textContent)) {
+      quotes = quotes.filter((quote) => {
+        return quote !== results.textContent;
+      });
     }
-    if(quotes.includes(results.textContent)) star.classList.add("selected");
+    if (quotes.includes(results.textContent)) star.classList.add("selected");
   }
   localStorage.setItem("ChuckNorrisApp", JSON.stringify(quotes));
-  
+
   modal.textContent = "";
-  for(let i = 0; i < quotes.length; i++){
+  for (let i = 0; i < quotes.length; i++) {
     const favoriteQuote = document.createElement("p");
     favoriteQuote.classList.add("best-quote");
     favoriteQuote.textContent = quotes[i];
     modal.appendChild(favoriteQuote);
-    }
+  }
   const test = JSON.parse(localStorage.getItem("ChuckNorrisApp")) || [];
   console.log(test);
 });
-
