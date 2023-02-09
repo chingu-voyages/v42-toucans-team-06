@@ -17,7 +17,7 @@ This app was created for the Chingu Voyage 42. "Chuck Norris Quotes" is an appli
 ## Features
 - Clicking on a button of category then we display a joke.
 - Typing effect on the display of joke.
-- Add to Favorites
+- Add to Favorites.
 
 ## Contributers
 > -[Emma Eide](https://github.com/emmaelisabetheide)
